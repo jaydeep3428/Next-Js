@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function Page() {
   const [products, setProducts] = useState([]);
@@ -28,9 +29,11 @@ export default function Page() {
             className="border-2 p-4 border-gray-300 shadow-md hover:scale-105 transition-all duration-300"
           >
             <h3 className="text-xl mb-2">{item.title}</h3>
-            <img
+            <Image
               src={item.images[0]}
               alt={item.title}
+              width={300}
+              height={200}
               className="w-full h-48 object-contain"
             />
             <p className="mt-2">₹ {item.price}</p>
